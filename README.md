@@ -60,23 +60,24 @@ Este curso está em constante desenvolvimento. Envie sugestões e correções pa
 O `ns2` irá rodar em um contêiner `docker`. Acesse a [documentação](https://docs.docker.com/engine/install/) para instalar o `docker engine`
 
 Baixe o contêiner com o ns2 instalado
-```shell
+```bash
 docker pull gelirettore/ns2
 ```
 
 Crie um diretório chamado `ns2` e acesse-o pelo terminal
-```shell
+```bash
 mkdir ns2
 cd ns2
 ```
 
 Baixe o arquivo [run.sh](scripts/run.sh) e coloque-o dentro do diretório `ns2`. Altere suas permissões para permitir execução do script:
-```shell
+```bash
 chmod +x run.sh
 ```
 
 Crie o diretório `simulacoes`. Este será o local onde você irá armazenar toads as simulações.
 
-```shell
+```bash
 mkdir simulacoes
 ```
+
