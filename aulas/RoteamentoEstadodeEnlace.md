@@ -50,3 +50,84 @@ O algoritmo mantém duas estruturas principais:
 ### Exemplo Prático do Algoritmo de Dijkstra
 
 Considere a seguinte topologia de rede, onde os números representam o custo de cada enlace:
+10
+
+A ------- B | | | 5 | 1 | | C ------- D 2
+
+
+Se executarmos o algoritmo de Dijkstra a partir do nó A:
+
+1. **Inicialização**:
+   - Distância de A = 0 (nó de origem)
+   - Distância de B, C, D = ∞ (infinito)
+   - Q = {A, B, C, D}, S = {}
+
+2. **Primeira iteração** (selecionamos A):
+   - Movemos A de Q para S: Q = {B, C, D}, S = {A}
+   - Atualizamos os vizinhos de A:
+     - Distância de B = min(∞, 0 + 10) = 10
+     - Distância de C = min(∞, 0 + 5) = 5
+
+3. **Segunda iteração** (selecionamos C, que tem a menor distância em Q):
+   - Movemos C de Q para S: Q = {B, D}, S = {A, C}
+   - Atualizamos os vizinhos de C:
+     - Distância de D = min(∞, 5 + 2) = 7
+
+4. **Terceira iteração** (selecionamos D):
+   - Movemos D de Q para S: Q = {B}, S = {A, C, D}
+   - Atualizamos os vizinhos de D:
+     - Distância de B = min(10, 7 + 1) = 8
+
+5. **Quarta iteração** (selecionamos B):
+   - Movemos B de Q para S: Q = {}, S = {A, C, D, B}
+   - Não há mais vizinhos para atualizar
+
+**Resultado final**:
+- Caminho mais curto de A para B: A → C → D → B (custo total: 8)
+- Caminho mais curto de A para C: A → C (custo total: 5)
+- Caminho mais curto de A para D: A → C → D (custo total: 7)
+
+## Protocolos de Roteamento Baseados em Estado de Enlace
+
+Os principais protocolos de roteamento que implementam o algoritmo de Dijkstra são:
+
+### OSPF (Open Shortest Path First)
+- Padrão aberto amplamente utilizado em redes IP
+- Suporta roteamento hierárquico através de áreas
+- Rápida convergência após mudanças na topologia
+- Utiliza o conceito de "custo" como métrica (inversamente proporcional à largura de banda)
+
+### IS-IS (Intermediate System to Intermediate System)
+- Originalmente desenvolvido para o modelo OSI
+- Também amplamente utilizado em redes IP, especialmente por provedores de serviços
+- Similar ao OSPF em muitos aspectos, mas com algumas diferenças estruturais
+- Altamente escalável para redes muito grandes
+
+## Vantagens do Roteamento de Estado de Enlace
+
+1. **Convergência rápida**: Adapta-se rapidamente a mudanças na topologia da rede
+2. **Visão completa**: Cada roteador possui um mapa completo da rede
+3. **Eficiência**: Calcula caminhos verdadeiramente ótimos baseados em métricas específicas
+4. **Escalabilidade**: Pode ser implementado de forma hierárquica para suportar redes muito grandes
+5. **Suporte a ECMP (Equal-Cost Multi-Path)**: Permite balanceamento de carga através de múltiplos caminhos de mesmo custo
+
+## Desafios do Roteamento de Estado de Enlace
+
+1. **Requisitos de memória e processamento**: Necessita de mais recursos computacionais que protocolos mais simples
+2. **Complexidade de configuração**: Requer planejamento cuidadoso, especialmente em redes hierárquicas
+3. **Sobrecarga de tráfego**: Durante a inicialização ou após grandes mudanças, pode gerar tráfego significativo de controle
+
+## Conclusão
+
+O roteamento de estado de enlace, fundamentado no algoritmo de Dijkstra, representa uma abordagem sofisticada e eficiente para o roteamento em redes modernas. Ao permitir que cada roteador construa um mapa completo da topologia da rede e calcule independentemente os caminhos mais curtos, estes protocolos oferecem convergência rápida, adaptabilidade e eficiência no encaminhamento de pacotes.
+
+Protocolos como OSPF e IS-IS implementam estes conceitos e são amplamente utilizados em redes corporativas e na internet, formando a espinha dorsal do roteamento moderno. A compreensão do algoritmo de Dijkstra e dos princípios de estado de enlace é fundamental para qualquer profissional que trabalhe com design, implementação e troubleshooting de redes de computadores.
+
+---
+
+**Referências Bibliográficas:**
+
+- TANENBAUM, Andrew S.; WETHERALL, David. Redes de Computadores. 5ª ed. São Paulo: Pearson, 2011.
+- KUROSE, James F.; ROSS, Keith W. Redes de Computadores e a Internet: Uma Abordagem Top-Down. 6ª ed. São Paulo: Pearson, 2013.
+- DIJKSTRA, E. W. A note on two problems in connexion with graphs. Numerische Mathematik, v. 1, n. 1, p. 269-271, 1959.
+- MOYS, Thomas M. OSPF: Anatomy of an Internet Routing Protocol. Addison-Wesley Professional, 1998.
