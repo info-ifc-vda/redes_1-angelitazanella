@@ -47,46 +47,6 @@ O algoritmo mantém duas estruturas principais:
    - Ao final, cada nó terá associado a ele a distância do caminho mais curto a partir do nó de origem
    - A sequência de nós que forma cada caminho mais curto também pode ser reconstruída
 
-### Exemplo Prático do Algoritmo de Dijkstra
-
-Considere a seguinte topologia de rede, onde os números representam o custo de cada enlace:
-10
-
-A ------- B | | | 5 | 1 | | C ------- D 2
-
-
-Se executarmos o algoritmo de Dijkstra a partir do nó A:
-
-1. **Inicialização**:
-   - Distância de A = 0 (nó de origem)
-   - Distância de B, C, D = ∞ (infinito)
-   - Q = {A, B, C, D}, S = {}
-
-2. **Primeira iteração** (selecionamos A):
-   - Movemos A de Q para S: Q = {B, C, D}, S = {A}
-   - Atualizamos os vizinhos de A:
-     - Distância de B = min(∞, 0 + 10) = 10
-     - Distância de C = min(∞, 0 + 5) = 5
-
-3. **Segunda iteração** (selecionamos C, que tem a menor distância em Q):
-   - Movemos C de Q para S: Q = {B, D}, S = {A, C}
-   - Atualizamos os vizinhos de C:
-     - Distância de D = min(∞, 5 + 2) = 7
-
-4. **Terceira iteração** (selecionamos D):
-   - Movemos D de Q para S: Q = {B}, S = {A, C, D}
-   - Atualizamos os vizinhos de D:
-     - Distância de B = min(10, 7 + 1) = 8
-
-5. **Quarta iteração** (selecionamos B):
-   - Movemos B de Q para S: Q = {}, S = {A, C, D, B}
-   - Não há mais vizinhos para atualizar
-
-**Resultado final**:
-- Caminho mais curto de A para B: A → C → D → B (custo total: 8)
-- Caminho mais curto de A para C: A → C (custo total: 5)
-- Caminho mais curto de A para D: A → C → D (custo total: 7)
-
 ## Protocolos de Roteamento Baseados em Estado de Enlace
 
 Os principais protocolos de roteamento que implementam o algoritmo de Dijkstra são:
