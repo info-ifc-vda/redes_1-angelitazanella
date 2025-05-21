@@ -214,12 +214,14 @@ Router(config-if)# ip ospf cost <valor>
 
 Você também pode alterar a Referência de Largura de Banda
 ```
+Router(config-router)# router ospf <process-id>
 Router(config-router)# auto-cost reference-bandwidth <valor-em-Mbps>
 ```
 - **valor-em-Mbps:** Valor em Mbps usado como referência para cálculo automático de custos
 
 É possível ainda configurar os Temporizadores
 ```
+Router(config)#interface <nome da interface>
 Router(config-if)# ip ospf hello-interval <segundos>
 Router(config-if)# ip ospf dead-interval <segundos>
 ```
