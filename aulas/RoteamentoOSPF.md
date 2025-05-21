@@ -75,7 +75,7 @@ A compreensão do OSPF não apenas permite configurar e solucionar problemas em 
 ---
 ## Atividade Prática: Configuração Básica do OSPF em Roteadores Cisco
 
-### 1. Construa um cenário composto por 5 roteadores e 2 LANs, compatível com a imagem:
+### 1. Construa um cenário composto por 7 roteadores e 2 LANs, compatível com a imagem:
 ![image](imagens/cenario1.png)
 
 
@@ -101,7 +101,7 @@ R1(config)# router ospf <process-id>
 
 #### 3.1 Anunciando Redes
 ```
-R1(config-router)# network <endereço-ip> <wildcard-mask> area <area-id>
+R1(config-router)# network <endereço-de-rede> <wildcard-mask> area <area-id>
 ```
 - **endereço-ip:** Endereço IP da rede a ser anunciada
 - **wildcard-mask:** Máscara inversa (0s indicam bits que devem corresponder, 1s são "*don't care*")
