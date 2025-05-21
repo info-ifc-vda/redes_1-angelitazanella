@@ -50,7 +50,7 @@ Este curso está em constante desenvolvimento. Envie sugestões e correções pa
         - Estado de Enlace
         - Vetor de Distância
         - Roteamento Hierárquico
-        - Roteamento Intra-AS (OSPF)						
+        - [Roteamento Intra-AS (OSPF)](aulas/RoteamentoOSPF.md)						
         - Roteamento Inter-AS (BGP)			
         - Roteamento por Difusão 
         - Roteamento Multicast
