@@ -109,7 +109,7 @@ R1(config-router)# network <endereço-de-rede> <wildcard-mask> area <area-id>
 
 Exemplo:
 ```
-R1(config-router)# network 200.200.205.0 0.0.0.255 area 1.
+R1(config-router)# network 200.200.205.0 0.0.0.255 area 1
 ```
 
 Repita o processo em todos os roteadores.
@@ -183,17 +183,20 @@ Esta métrica permite que o OSPF selecione caminhos baseados na capacidade real 
 
 ### Configuração de Métricas
 
-As métricas podem ser ajustadas manualmente:
+As métricas podem ser ajustadas manualmente. Para isso, primeiro acesse a interface e depois ajuste 
 ```
+Router(config)#interface <nome da interface>
 Router(config-if)# ip ospf cost <valor>
 ```
-Ou alterando a referência de largura de banda:
+Você também pode alterar a referência de largura de banda:
 ```
+Router(config-router)# router ospf <process-id>
 Router(config-router)# auto-cost reference-bandwidth <valor-em-Mbps>
 ```
 
 Para enlaces de alta velocidade como fibra óptica, é recomendável aumentar a *reference-bandwidth*:
 ```
+Router(config-router)# router ospf <process-id>
 Router(config-router)# auto-cost reference-bandwidth 10000
 ```
 Isso define 10 Gbps como referência, permitindo diferenciação entre enlaces de 1 Gbps e 10 Gbps.
