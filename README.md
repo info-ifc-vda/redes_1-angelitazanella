@@ -42,6 +42,7 @@ Este curso está em constante desenvolvimento. Envie sugestões e correções pa
     - Ethernet							- Redes sem fio
     - VLANs e datacenters	
 - Camada de Rede							
+    - [Sistemas Autônomos (AS)](aulas/AS.md)
     - O protocolo IP							
     - IPv4							
     - NAT							
@@ -51,7 +52,7 @@ Este curso está em constante desenvolvimento. Envie sugestões e correções pa
         - Vetor de Distância
         - Roteamento Hierárquico
         - [Roteamento Intra-AS (OSPF)](aulas/RoteamentoOSPF.md)						
-        - Roteamento Inter-AS (BGP)			
+        - [Roteamento Inter-AS (BGP)](aulas/RoteamentoBGP.md)			
         - Roteamento por Difusão 
         - Roteamento Multicast
 
