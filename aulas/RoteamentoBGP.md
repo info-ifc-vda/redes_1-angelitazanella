@@ -218,7 +218,7 @@ Configure os endereços IP em todas as interfaces dos roteadores conforme a tabe
 | ISP-A    | G0/0            | 172.16.0.1    | 255.255.255.0   | LAN Provedor A    |
 | ISP-A    | S0/0/0          | 203.0.113.1   | 255.255.255.252 | Conexão com R1    |
 | ISP-A    | S0/0/1          | 198.51.100.1  | 255.255.255.252 | Conexão com ISP-B |
-| ISP-B    | G0/0 172.17.0.1 | 255.255.255.0 | LAN Provedor B  |
+| ISP-B    | G0/0            | 172.17.0.1 | 255.255.255.0 | LAN Provedor B  |
 | ISP-B    | S0/0/0          | 203.0.113.5   | 255.255.255.252 | Conexão com R2    |
 | ISP-B    | S0/0/1          | 198.51.100.2  | 255.255.255.252 | Conexão com ISP-A |
 
